@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vander Baptista de Lima - Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <h2>VBL</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="#projects" class="nav-link">Projetos</a></li>
+                <li><a href="#certifications" class="nav-link">Certificações</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Olá, eu sou <span class="highlight">Vander Baptista</span></h1>
+                <h2>Estagiário de QA & Desenvolvedor Web</h2>
+                <p>Comprometido com a qualidade, trabalho em equipe e entrega de soluções eficientes. Buscando contribuir em ambientes ágeis com foco na melhoria contínua.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Entrar em Contato</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/vander-baptista" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:vanderks300@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+5511963419096" aria-label="Telefone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon" style="--delay: 0s;">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 1s;">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 2s;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Estagiário de QA com sólida base em Análise e Desenvolvimento de Sistemas, recentemente capacitado em Testes de Software Manual e Automático. Possuo experiência prática com suporte técnico, atendimento ao cliente e diagnóstico de sistemas.</p>
+                    
+                    <div class="experience-timeline">
+                        <h3>Experiência Profissional</h3>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Ago/2022 – Out/2024</div>
+                            <div class="timeline-content">
+                                <h4>Técnico de Campo</h4>
+                                <p class="company">Baramaia Serviços LTDA</p>
+                                <ul>
+                                    <li>Suporte técnico e atendimento ao cliente com foco em solução de problemas</li>
+                                    <li>Diagnóstico e análise de falhas em sistemas</li>
+                                    <li>Comunicação eficaz para resolução rápida de chamados</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">Dez/2012 – Set/2022</div>
+                            <div class="timeline-content">
+                                <h4>Repositor</h4>
+                                <p class="company">Nagumo Supermercado</p>
+                                <ul>
+                                    <li>Reposição de mercadorias e organização do setor</li>
+                                    <li>Atendimento ao cliente e esclarecimento de dúvidas</li>
+                                    <li>Controle de estoque e validade dos produtos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education">
+                        <h3>Formação Acadêmica</h3>
+                        <div class="education-item">
+                            <h4>Análise e Desenvolvimento de Sistemas</h4>
+                            <p class="institution">FMU - Fev/2025 – Atual</p>
+                        </div>
+                        <div class="education-item">
+                            <h4>Técnico em Eletrotécnica</h4>
+                            <p class="institution">ETEC Centro Paula Souza - Fev/2016 – Dez/2017</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Metodologias Ágeis</h3>
+                    <ul>
+                        <li>Scrum</li>
+                        <li>Kanban</li>
+                        <li>BDD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Ferramentas</h3>
+                    <ul>
+                        <li>Jira</li>
+                        <li>Trello</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Testes de Software</h3>
+                    <ul>
+                        <li>Testes Web, E2E, Funcionais</li>
+                        <li>Teste de API</li>
+                        <li>Automação de Testes</li>
+                        <li>Criação de Casos de Teste</li>
+                        <li>Documentação</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Linguagens & Tecnologias</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML/CSS</li>
+                        <li>MySQL</li>
+                        <li>PHP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certificações</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Teste de Software Manual</h3>
+                        <p>Udemy (Jan–Fev/2025)</p>
+                        <a href="#" target="_blank" class="btn btn-secondary btn-small">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Testes de Software Automáticos</h3>
+                        <p>Udemy (Jan–Fev/2025)</p>
+                        <a href="#" target="_blank" class="btn btn-secondary btn-small">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Informática Avançada</h3>
+                        <p>Edune Cursos (Nov–Dez/2024)</p>
+                        <a href="#" target="_blank" class="btn btn-secondary btn-small">Ver Certificado</a>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Java na Prática - Códigos</h3>
+                        <p>Edune Cursos (Mar–Mai/2024)</p>
+                        <a href="#" target="_blank" class="btn btn-secondary btn-small">Ver Certificado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Administração de Condomínio</h3>
+                        <p>Sistema completo para gestão de condomínios com área pública para visitantes e painel administrativo com autenticação. Inclui dashboard, gerenciamento de moradores, boletos e comunicados.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="https://github.com/VanderKS300" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Projeto de Testes Automatizados</h3>
+                        <p>Desenvolvimento de suíte de testes automatizados para aplicação web utilizando ferramentas modernas de QA.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">Jest</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard de Métricas de QA</h3>
+                        <p>Sistema para acompanhamento de métricas de qualidade e relatórios de testes em tempo real.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Aplicação de Gestão de Casos de Teste</h3>
+                        <p>Ferramenta para criação, execução e acompanhamento de casos de teste com interface responsiva.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Vamos conversar!</h3>
+                    <p>Estou sempre aberto a novas oportunidades e colaborações. Entre em contato comigo!</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>vanderks300@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 96341-9096</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Localização</h4>
+                            <p>Mogi das Cruzes, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Vander Baptista de Lima. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="https://linkedin.com/in/vander-baptista" target="_blank">LinkedIn</a>
+                    <a href="mailto:vanderks300@gmail.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
