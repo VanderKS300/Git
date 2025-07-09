@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vander Store - Sua Loja de Anime Favorita</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="shipping-info">
+                        <i class="fas fa-truck"></i>
+                        <span>Frete grátis para compras acima de R$ 150</span>
+                    </div>
+                    <div class="header-links">
+                        <a href="#" class="header-link">Assista Anime no Vander</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="fas fa-play-circle"></i>
+                        <span class="logo-text">Vander</span>
+                        <span class="logo-store">store</span>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="O que você está procurando?">
+                        <button type="button" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <button class="action-btn" id="favoritesBtn">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoritos</span>
+                            <span class="badge" id="favoritesBadge">0</span>
+                        </button>
+                        
+                        <button class="action-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Carrinho</span>
+                            <span class="badge" id="cartBadge">0</span>
+                        </button>
+                        
+                        <button class="action-btn" id="accountBtn">
+                            <i class="fas fa-user"></i>
+                            <span>Conta</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navigation">
+            <div class="container">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="nav-link active" data-category="">Todos</a></li>
+                    <li><a href="#" class="nav-link" data-category="1">Figuras</a></li>
+                    <li><a href="#" class="nav-link" data-category="2">Roupas</a></li>
+                    <li><a href="#" class="nav-link" data-category="3">Mangás</a></li>
+                    <li><a href="#" class="nav-link" data-category="4">Eletrônicos</a></li>
+                    <li><a href="#" class="nav-link" data-category="5">Casa</a></li>
+                    <li><a href="#" class="nav-link" data-category="6">Promoções</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Bem-vindo à Vander Store</h1>
+                    <p>Descubra produtos exclusivos dos seus animes favoritos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Produtos em Destaque</h2>
+                <div class="products-grid" id="featuredProducts">
+                    <!-- Produtos em destaque serão carregados aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- On Sale Products -->
+        <section class="sale-section">
+            <div class="container">
+                <h2 class="section-title">Ofertas Especiais</h2>
+                <div class="products-grid" id="saleProducts">
+                    <!-- Produtos em promoção serão carregados aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- All Products -->
+        <section class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Todos os Produtos</h2>
+                    <div class="filters">
+                        <select id="sortSelect">
+                            <option value="newest">Mais Recentes</option>
+                            <option value="price_asc">Menor Preço</option>
+                            <option value="price_desc">Maior Preço</option>
+                            <option value="name">Nome A-Z</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="allProducts">
+                    <!-- Todos os produtos serão carregados aqui -->
+                </div>
+                
+                <div class="pagination" id="pagination">
+                    <!-- Paginação será carregada aqui -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrinho de Compras</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-content" id="cartContent">
+            <!-- Itens do carrinho serão carregados aqui -->
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: R$ <span id="cartTotal">0,00</span></span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalProductName"></h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalProductImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <p id="modalProductDescription"></p>
+                    <div class="modal-price">
+                        <span class="current-price" id="modalCurrentPrice"></span>
+                        <span class="original-price" id="modalOriginalPrice"></span>
+                    </div>
+                    <div class="modal-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decreaseQty">-</button>
+                            <input type="number" id="modalQuantity" value="1" min="1">
+                            <button class="qty-btn" id="increaseQty">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" id="modalAddToCart">
+                            <i class="fas fa-shopping-cart"></i>
+                            Adicionar ao Carrinho
+                        </button>
+                        <button class="favorite-btn" id="modalFavorite">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre a Vander Store</h4>
+                    <p>Sua loja oficial de produtos de anime com os melhores preços e qualidade garantida.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Atendimento</h4>
+                    <ul>
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Trocas e Devoluções</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vander Store. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

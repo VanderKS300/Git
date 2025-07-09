@@ -1,0 +1,167 @@
+@font-face {
+  font-family: 'SurfFont';
+  src: url('fonts/grafite.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.site-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.banner-left,
+.banner-right {
+  width: 120px;
+  background: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+header {
+  background-color: #0c0c0c;
+  color: #00bfff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.surf-font {
+  font-family: 'SurfFont', sans-serif;
+  font-size: 3em;
+  margin: 0;
+}
+
+.parati-img {
+  height: 300px;
+}
+
+section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.whatsapp-button {
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+form button {
+  background: #000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease;
+}
+
+form button:hover {
+  background-color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #222;
+  color: white;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+}
+
+.whatsapp-float img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .banner-left,
+  .banner-right {
+    display: none;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .surf-font {
+    font-size: 2em;
+  }
+
+  .parati-img {
+    width: 120px;
+  }
+}

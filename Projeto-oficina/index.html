@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oficina Surf Car</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="site-wrapper">
+    <!-- Banner lateral esquerdo -->
+    <aside class="banner-left">
+      <div class="ad">Espaço para Anúncio</div>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+      <header>
+        <img src="img/parati.png" alt="Parati Surf" class="parati-img" />
+      </header>
+
+      <section class="services">
+        <h2>Serviços</h2>
+        <ul>
+          <li>Troca de óleo</li>
+          <li>Freio</li>
+          <li>Suspensão</li>
+          <li>Injeção</li>
+          <li>Reparo de pneu</li>
+          <li>Troca de lâmpadas</li>
+        </ul>
+      </section>
+
+      <section class="contact">
+        <h2>Contato</h2>
+        <p>Fale com <strong>Pedro</strong>:</p>
+        <a href="https://wa.me/5511950224006" class="whatsapp-button" target="_blank">Enviar mensagem no WhatsApp</a>
+        <p>Endereço: Av. Edith Inácio da Silva, 377 – Vila Paulista</p>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps?q=Av.+Edith+In%C3%A1cio+da+Silva,+377,+Vila+Paulista&output=embed" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>Envie uma mensagem</h2>
+        <form id="contactForm">
+          <input type="text" name="name" placeholder="Seu nome" required>
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+          <textarea name="message" placeholder="Sua mensagem" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="formResponse"></p>
+      </section>
+
+      <footer>
+        <p>&copy; 2025 Oficina Surf Car</p>
+      </footer>
+    </main>
+
+    <!-- Banner lateral direito -->
+    <aside class="banner-right">
+      <div class="ad">Anuncie Aqui</div>
+    </aside>
+  </div>
+
+  <a href="https://wa.me/5511950224006" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+  </a>
+
+</body>
+</html>
