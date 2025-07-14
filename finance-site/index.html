@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceHub - Consulta Financeira</title>
+    <meta name="description" content="Site de consulta financeira com dados de ações, notícias de especialistas, glossário de termos e sugestões de investimento.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>FinanceHub</span>
+                </div>
+                
+                <nav class="nav">
+                    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <i class="fas fa-home"></i>
+                        Dashboard
+                    </a>
+                    <a href="#stocks" class="nav-link" data-section="stocks">
+                        <i class="fas fa-chart-bar"></i>
+                        Ações
+                    </a>
+                    <a href="#news" class="nav-link" data-section="news">
+                        <i class="fas fa-newspaper"></i>
+                        Notícias
+                    </a>
+                    <a href="#glossary" class="nav-link" data-section="glossary">
+                        <i class="fas fa-book"></i>
+                        Glossário
+                    </a>
+                    <a href="#suggestions" class="nav-link" data-section="suggestions">
+                        <i class="fas fa-lightbulb"></i>
+                        Sugestões
+                    </a>
+                </nav>
+                
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Buscar ações, notícias, termos...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="section active">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Dashboard Financeiro</h1>
+                    <p>Acompanhe o mercado em tempo real</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <!-- Market Overview -->
+                    <div class="card market-overview">
+                        <h3>Visão Geral do Mercado</h3>
+                        <div class="market-stats">
+                            <div class="stat">
+                                <span class="stat-label">Ibovespa</span>
+                                <span class="stat-value" id="ibovespa-value">--</span>
+                                <span class="stat-change" id="ibovespa-change">--</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Dólar</span>
+                                <span class="stat-value" id="dollar-value">--</span>
+                                <span class="stat-change" id="dollar-change">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Gainers -->
+                    <div class="card">
+                        <h3>Maiores Altas</h3>
+                        <div class="stock-list" id="top-gainers">
+                            <div class="loading">Carregando...</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Losers -->
+                    <div class="card">
+                        <h3>Maiores Baixas</h3>
+                        <div class="stock-list" id="top-losers">
+                            <div class="loading">Carregando...</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent News -->
+                    <div class="card news-card">
+                        <h3>Notícias Recentes</h3>
+                        <div class="news-list" id="recent-news">
+                            <div class="loading">Carregando...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stocks Section -->
+        <section id="stocks" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Consulta de Ações</h1>
+                    <p>Pesquise e analise ações da bolsa brasileira</p>
+                </div>
+                
+                <div class="filters-container">
+                    <div class="search-box">
+                        <input type="text" id="stock-search" placeholder="Buscar por código ou nome da empresa...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="filters">
+                        <select id="sector-filter">
+                            <option value="">Todos os Setores</option>
+                        </select>
+                        
+                        <select id="sort-filter">
+                            <option value="symbol">Código</option>
+                            <option value="regular_market_change_percent">Variação %</option>
+                            <option value="regular_market_price">Preço</option>
+                            <option value="regular_market_volume">Volume</option>
+                        </select>
+                        
+                        <select id="order-filter">
+                            <option value="asc">Crescente</option>
+                            <option value="desc">Decrescente</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="stocks-table-container">
+                    <table class="stocks-table">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Empresa</th>
+                                <th>Preço</th>
+                                <th>Variação</th>
+                                <th>Volume</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-table-body">
+                            <tr>
+                                <td colspan="6" class="loading">Carregando...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Notícias de Especialistas</h1>
+                    <p>Análises e insights do mercado financeiro</p>
+                </div>
+                
+                <div class="filters-container">
+                    <div class="filters">
+                        <select id="news-category-filter">
+                            <option value="">Todas as Categorias</option>
+                        </select>
+                        
+                        <select id="news-expert-filter">
+                            <option value="">Todos os Especialistas</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="news-grid" id="news-grid">
+                    <div class="loading">Carregando...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Glossary Section -->
+        <section id="glossary" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Glossário Financeiro</h1>
+                    <p>Entenda os termos do mercado financeiro</p>
+                </div>
+                
+                <div class="filters-container">
+                    <div class="search-box">
+                        <input type="text" id="glossary-search" placeholder="Buscar termo...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="filters">
+                        <select id="glossary-category-filter">
+                            <option value="">Todas as Categorias</option>
+                        </select>
+                        
+                        <div class="alphabet-filter" id="alphabet-filter">
+                            <!-- Letters will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glossary-grid" id="glossary-grid">
+                    <div class="loading">Carregando...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggestions Section -->
+        <section id="suggestions" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Sugestões de Ações</h1>
+                    <p>Análises e recomendações de investimento</p>
+                </div>
+                
+                <!-- Disclaimer -->
+                <div class="disclaimer">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <strong>IMPORTANTE:</strong> As sugestões apresentadas são apenas para fins informativos e educacionais. 
+                        Elas não constituem aconselhamento financeiro. O investimento em mercados financeiros envolve riscos, 
+                        incluindo a possível perda do capital investido. Você é inteiramente responsável por suas decisões de investimento.
+                    </div>
+                </div>
+                
+                <div class="filters-container">
+                    <div class="filters">
+                        <select id="investment-type-filter">
+                            <option value="">Todos os Tipos</option>
+                        </select>
+                        
+                        <select id="risk-profile-filter">
+                            <option value="">Todos os Perfis de Risco</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="suggestions-grid" id="suggestions-grid">
+                    <div class="loading">Carregando...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Stock Detail Modal -->
+    <div id="stock-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="stock-modal-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Term Detail Modal -->
+    <div id="term-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="term-modal-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
