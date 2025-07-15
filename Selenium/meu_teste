@@ -25,12 +25,20 @@ for botao in botao_contato:
         break
 time.sleep(2)
 
-# escrever em um formulario
-navegador.find_element("id", "name").send_keys("Vander Baptista de Lima")
-navegador.find_element("id", "email").send_keys("vandervnd@hotmail.com")
-navegador.find_element("id", "subject").send_keys("Teste")
-navegador.find_element("id", "message").send_keys("para mim")
+botao_projetos = navegador.find_elements("class name", "nav-link")
 
-navegador.find_element("class", "btn btn-primary").click
+for botao in botao_projetos:
+    if "Projetos" in botao.text:
+        botao.click()
+        break
+time.sleep(2)
+
+botao_venda = navegador.find_elements("class name", "project-link")
+
+for botao in botao_venda:
+    href = botao.get_attribute("href")
+    if "https://vendas01.infinityfreeapp.com/?i=1" in href:
+        botao.click()
+        break
 
 time.sleep(10)
